@@ -1,2 +1,5 @@
 # jQuery-Task-Tracker
-Task Tracker site that saves to do items to local storage.
+
+Task Tracker application for workday hours only.
+built with moment.js, bootstrap, and jquery.
+Saved tasks log to local storage and remain in their spot on refresh until you change it.
