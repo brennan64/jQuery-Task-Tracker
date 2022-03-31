@@ -14,6 +14,15 @@ let hr8Slot = $(".hr8 textArea");
 var currentTime = moment().hours();
 let txtArea = $("textArea");
 
+hr1Slot.val(localStorage.getItem("1"));
+hr2Slot.val(localStorage.getItem("2"));
+hr3Slot.val(localStorage.getItem("3"));
+hr4Slot.val(localStorage.getItem("4"));
+hr5Slot.val(localStorage.getItem("5"));
+hr6Slot.val(localStorage.getItem("6"));
+hr7Slot.val(localStorage.getItem("7"));
+hr8Slot.val(localStorage.getItem("8"));
+
 function checkPast() {
   if (dayorNight == "pm") {
     hr1Slot.addClass("past");
@@ -103,3 +112,12 @@ function checkPresent() {
 checkPast();
 checkFuture();
 checkPresent();
+$(".saveBtn").on("click", function (e) {
+  e.preventDefault();
+  //grab input from <textarea> and set as the value in local storage
+  var textValue = $(this).siblings("textArea").val();
+  //grab input from <id>, set as key  in local storage to be called on later to get item from local storage
+  var timeKey = $(this).parent().attr("id");
+  //store in local storage
+  localStorage.setItem(timeKey, textValue);
+});
