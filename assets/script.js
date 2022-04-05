@@ -112,12 +112,13 @@ function checkPresent() {
 checkPast();
 checkFuture();
 checkPresent();
+
 $(".saveBtn").on("click", function (e) {
   e.preventDefault();
-  //grab input from <textarea> and set as the value in local storage
+
   var textValue = $(this).siblings("textArea").val();
-  //grab input from <id>, set as key  in local storage to be called on later to get item from local storage
+
   var timeKey = $(this).parent().attr("id");
-  //store in local storage
+
   localStorage.setItem(timeKey, textValue);
 });
